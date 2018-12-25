@@ -1,6 +1,9 @@
 # redis-manager
 redis manager on browser
 
+## demo
+http://fly123.tk:8081/#/dashboard
+
 ## enviroment
 - linux
 - windows // not support tty
