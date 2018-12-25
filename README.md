@@ -34,4 +34,5 @@ visit http://localhost:8081
 
 ## package download
 https://blog.fly123.tk/dl/redis-manager.linux64.tar.gz
+https://blog.fly123.tk/dl/redis-manager.windows64.tar.gz
 
