@@ -29,6 +29,7 @@ cp -r redis-manager/frontend/dist redis-manager/bin/dist
 cd redis-manager/bin
 mv conf.example.yaml conf.yaml // modify the config file if necessity 
 ./redis-manager
+visit http://localhost:8081
 ```
 
 ## package download
