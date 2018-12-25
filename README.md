@@ -15,20 +15,25 @@ http://fly123.tk:8081/#/dashboard
 - golang 1.11 +
 - redis-cli // require for tty
 - dep
+- github.com/jteeuwen/go-bindata
 
-## build
+## build at linux
 ```
 git clone https://github.com/cocktail18/redis-manager
-cd redis-manager/bin && dep ensure && go build redis-manager
-cd redis-manager/frontend && cnpm install && npm run build
-cp -r redis-manager/frontend/dist redis-manager/bin/dist
+make
+```
+
+## build at windows
+```
+git clone https://github.com/cocktail18/redis-manager
+cd frontend && cnpm i && npm run build
+go build -o build/redis-manager bin/redis-manager.go
 ```
 
 ## setup
 ```
-cd redis-manager/bin
-mv conf.example.yaml conf.yaml // modify the config file if necessity 
-./redis-manager
+cp bin/conf.example.yaml build/conf.yaml // modify as you need
+cd build && chmod u+x redis-manager && ./redis-manager
 visit http://localhost:8081
 ```
 

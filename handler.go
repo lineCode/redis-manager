@@ -1,3 +1,4 @@
+//go:generate  go-bindata -pkg redis_manager -o asset.go -prefix frontend/dist/ frontend/dist/...
 package redis_manager
 
 import (
@@ -9,6 +10,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/shirou/gopsutil/mem"
 	log "github.com/sirupsen/logrus"
+	"github.com/elazarl/go-bindata-assetfs"
 )
 
 func corsMiddleware() gin.HandlerFunc {
@@ -116,9 +118,17 @@ func (srv *Server) initHandler() {
 		context.AbortWithStatusJSON(200, newResponseProto(200, "", "success"))
 	})
 
-	router.StaticFile("/", "./dist/index.html")
-	router.StaticFile("/favicon.ico", "./dist/favicon.ico")
-	router.StaticFS("/static", http.Dir("./dist/static"))
+	fs := &assetfs.AssetFS{Asset: Asset, AssetDir: AssetDir, Prefix: ""}
+	router.GET("/", func(context *gin.Context) {
+		bytes, _ := fs.Asset("index.html")
+		context.Writer.Write(bytes)
+	})
+	router.GET("/favicon.ico", func(context *gin.Context) {
+		bytes, _ := fs.Asset("favicon.ico")
+		context.Writer.Write(bytes)
+	})
+	fs.Prefix = "/static"
+	router.StaticFS("/static", fs)
 	authorized := router.Group("/")
 	authorized.Use(authMiddleware)
 	{
