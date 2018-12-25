@@ -1,0 +1,9 @@
+listen: 0.0.0.0:6666
+user:
+  - {
+    username: admin,
+    password: admin,
+    roles: [0]
+  }
+redis_server:
+  - {host: 127.0.0.1, port: 6379, preload: true}
