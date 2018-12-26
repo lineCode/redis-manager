@@ -1,0 +1,10 @@
+listen: :8081
+cache_dir: /tmp/redis-manager
+user:
+  - {
+    username: admin,
+    password: admin,
+    roles: [0, 1]
+  }
+redis_server:
+  - {name: 本地测试, host: 127.0.0.1, port: 6379, password: Duowan_123!, db: 0, refresh_duration: 0, preload: true}

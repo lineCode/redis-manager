@@ -1,5 +1,5 @@
 //go:generate  go-bindata -pkg redis_manager -o asset.go -prefix frontend/dist/ frontend/dist/...
-package redis_manager
+package server
 
 import (
 	"fmt"

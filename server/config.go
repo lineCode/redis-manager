@@ -1,4 +1,4 @@
-package redis_manager
+package server
 
 type Config struct {
 	Debug       bool          `json:"debug" yaml:"debug"`

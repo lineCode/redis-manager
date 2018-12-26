@@ -1,4 +1,4 @@
-package redis_manager
+package server
 
 import (
 	"github.com/gin-gonic/gin"

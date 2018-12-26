@@ -1,4 +1,4 @@
-package redis_manager
+package server
 
 type UserInfo struct {
 	Username string   `json:"username" yaml:"username"`

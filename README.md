@@ -4,11 +4,23 @@ redis manager on browser
 ## demo
 http://fly123.tk:8081/#/dashboard
 
-## enviroment
+## package download
+- https://blog.fly123.tk/dl/redis-manager.linux64.tar.gz
+- https://blog.fly123.tk/dl/redis-manager.windows64.tar.gz
+
+## quick start
+ ```
+ go get -u github.com/cocktail18/redis-manager // or download the bin package
+ wget https://blog.fly123.tk/dl/conf.example.yaml
+ redis-manager -c conf.example.yaml
+ visit http://localhost:8081
+ ```
+
+## os
 - linux
 - windows // not support tty
 
-## require
+## development require
 - node 
 - npm
 - cnpm
@@ -27,17 +39,14 @@ make
 ```
 git clone https://github.com/cocktail18/redis-manager
 cd frontend && cnpm i && npm run build
-go build -o build/redis-manager bin/redis-manager.go
+go build -o build/redis-manager ./
 ```
 
 ## setup
 ```
 cp bin/conf.example.yaml build/conf.yaml // modify as you need
-cd build && chmod u+x redis-manager && ./redis-manager
+cd build && chmod u+x redis-manager && ./redis-manager -c conf.yaml
 visit http://localhost:8081
 ```
 
-## package download
-- https://blog.fly123.tk/dl/redis-manager.linux64.tar.gz
-- https://blog.fly123.tk/dl/redis-manager.windows64.tar.gz
 

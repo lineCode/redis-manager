@@ -7,8 +7,8 @@ frontend :
 
 .PHONY : backend
 backend :
-	go build -o build/redis-manager bin/redis-manager.go
-	cp bin/conf.example.yaml build/conf.yaml
+	go build -o build/redis-manager ./
+	cp conf.example.yaml build/conf.yaml
 
 .PHONY : clean
 clean :

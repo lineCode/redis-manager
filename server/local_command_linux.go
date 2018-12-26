@@ -1,4 +1,4 @@
-package redis_manager
+package server
 
 import (
 	"os"

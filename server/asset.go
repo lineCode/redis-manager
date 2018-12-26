@@ -20,7 +20,7 @@
 // frontend/dist/static/js/chunk-libs.ea0c9158.js
 // DO NOT EDIT!
 
-package redis_manager
+package server
 
 import (
 	"bytes"

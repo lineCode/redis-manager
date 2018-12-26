@@ -2,7 +2,7 @@
 使用简单的memory session管理器
 https://www.jianshu.com/p/6e40edce289d
 */
-package redis_manager
+package server
 
 import (
 	"crypto/rand"
